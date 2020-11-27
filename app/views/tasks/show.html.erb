@@ -1,0 +1,14 @@
+<div class="container">
+  <h1><%= @task.title %></h1>
+  <h3><%= @task.details %></h3>
+  <% if @task.completed%>
+    <% tf_value = 2 %>
+    <% check = 'checked' %>
+  <% else %>
+    <% tf_value = 1 %>
+    <% check = '' %>
+  <% end %>
+  <input type="checkbox" name="check" value= <%= tf_value %> <%= check %>><%= @task.title %><br>
+  <%= link_to "Back to list", tasks_path()%>
+  <%= link_to "Edit task", edit_task_path()%>
+</div>
